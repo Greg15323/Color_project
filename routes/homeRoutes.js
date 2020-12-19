@@ -1,5 +1,4 @@
 const router = require("express").Router();
-//Cannot find module models
 const { Color } = require("../models");
 
 router.get("/", async (req, res) => {
