@@ -17,9 +17,81 @@
 
     <main> 
         <!--needs link to other page-->
-        <a href=""><button>View Results</button></a>
+        <a href="page.html"><button type="button" class="button button1">Add link to results</button></a>
 
     </main>
 
+    <!--<div id="parent"></div>-->
+    <section>
+        <h2 id= "prompt">Select your favorite color</h2>
+        <div id="fixed"></div>
+    </section>
+
+    <script src="https://unpkg.com/vanilla-picker@2"></script>
+<script>
+    let state = 1;
+
+ //console.clear();
+function $(selector) { return document.querySelector(selector); }
+    /*
+        Create a new Picker instance and set the parent element.
+        By default, the color picker is a popup which appears when you click the parent.
+    */
+    var parent = document.querySelector('#parent');
+    var picker = new Picker(parent);
+ 
+    /*
+        You can do what you want with the chosen color using two callbacks: onChange and onDone.
+    */
+    picker.onChange = function(color) {
+        //parent.style.background = color.rgbaString;
+        colorCallback(color)
+        //pickedcolor = color.rgbaString;
+        console.log(color);
+    };
+    picker.onDone = function(color) {
+        
+    };
+
+    const parentFixed = $('#fixed'),
+      pickerFixed = new Picker({
+          parent: parentFixed,
+          popup: false,
+          alpha: false,
+          editor: false,
+          color: 'black',
+          onChange: function(color) {
+              parentFixed.style.backgroundColor = color.rgbaString;
+          },
+          onDone: function(color) {
+              //console.log(color);
+              if (state === 1) {
+                              console.log(color._rgba);
+              console.log("fav r=" + color._rgba[0]);
+              console.log("fav g=" + color._rgba[1]);
+              console.log("fav b=" + color._rgba[2]); 
+              $("#prompt").innerHTML = "Select your least favorite color";
+              state ++; 
+              console.log(state);
+              }
+              else {
+                console.log(color._rgba);
+              console.log("least fav r=" + color._rgba[0]);
+              console.log("least fav g=" + color._rgba[1]);
+              console.log("least fav b=" + color._rgba[2]);
+              console.log("doing the redirect");
+              //post colors to storage
+              //add code to show that the user submitted. Use localstorage?
+              }
+
+
+          }
+        });
+        pickerFixed.setColor('black', true);
+
+
+
+ 
+</script> 
 </body> 
 </html>
