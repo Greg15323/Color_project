@@ -10,10 +10,22 @@ Color.init(
             primaryKey: true,
             autoIncrement: true
         },
-        favorite_color_ave: {
+        fav_red_ave: {
             type: DataTypes.DECIMAL,
         },
-        least_favorite_color_ave: {
+        fav_green_ave: {
+            type: DataTypes.DECIMAL,
+        },
+        fav_blue_ave: {
+            type: DataTypes.DECIMAL,
+        },
+        least_fav_red_ave: {
+            type: DataTypes.DECIMAL,
+        },
+        least_fav_green_ave: {
+            type: DataTypes.DECIMAL,
+        },
+        least_fav_blue_ave: {
             type: DataTypes.DECIMAL,
         }
     },
