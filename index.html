@@ -4,30 +4,30 @@
 <head> 
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> 
     <title>Color Project</title>
 <head>
 
 <body>
     <header> 
-        <h1>Color picker</h1>
-        <p>Test</p>
-        <p>Test 2</p>
-        <p>test 3</p>
+        <h1>ColorPicker</h1>
     </header>
+
 
     <main> 
         <!--needs link to other page-->
-        <a href="page.html"><button type="button" class="button button1">Add link to results</button></a>
+        <script src="https://unpkg.com/vanilla-picker@2"></script>
+        <section>
+            <h2 id= "prompt">Select your favorite color</h2>
+            <div id="fixed"></div>
+        </section>
+    
 
     </main>
 
-    <!--<div id="parent"></div>-->
-    <section>
-        <h2 id= "prompt">Select your favorite color</h2>
-        <div id="fixed"></div>
-    </section>
 
-    <script src="https://unpkg.com/vanilla-picker@2"></script>
+    
 <script>
     let state = 1;
 

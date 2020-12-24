@@ -1,13 +1,17 @@
 body { 
-    background-color: white;
+    background-color:  rgb(7, 21, 85);
+    margin: 0;  
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(156, 143, 194)), to(#66F6F2));
 }
 
 header { 
     padding: 20px;
     font-family: 'arial'; 
-    background-color: #7c2a2a;
-    color: #817575;
+    background-color: ; 
+    color: rgb(19, 20, 104);
     text-align: center;
+    margin: 0; 
+    padding: 0; 
 }
 
 button { 
@@ -21,3 +25,41 @@ button {
     text-align: center;
     margin: auto;
 }
+
+h1 {
+	display: inline;
+	position: relative;
+	font: 200px Helvetica, Sans-Serif;
+	letter-spacing: -5px;
+    color: rgb(245, 233, 227); 
+    font-family: 'Bangers', cursive;
+    text-shadow:
+    -4px -4px 0 #000,
+     0   -4px 0 #000,
+     4px -4px 0 #000,
+     4px  0   0 #000,
+     4px  4px 0 #000,
+     0    4px 0 #000,
+    -4px  4px 0 #000,
+    -4px  0   0 #000;
+}
+
+
+
+main { 
+    font-size: 30px; 
+    text-align: center; 
+    font-family: 'Bangers', cursive;
+    color: rgb(245, 233, 227); 
+    text-shadow:
+    -3px -3px 0 #000,
+     0   -3px 0 #000,
+     3px -3px 0 #000,
+     3px  0   0 #000,
+     3px  3px 0 #000,
+     0    3px 0 #000,
+    -3px  3px 0 #000,
+    -3px  0   0 #000;
+}
+
+    

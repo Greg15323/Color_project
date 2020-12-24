@@ -20,4 +20,14 @@ app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on PORT ${PORT}`));
+// grab the body and select
+var body = document.body;
+var select = document.getElementById( 'color' );
+
+// listen for the select's change event
+select.onchange = function() {
+    var color = select.options[select.selectedIndex].value; // get the selected color
+    body.style.background = color; // apply the selected color to the body
+};
+
 });
