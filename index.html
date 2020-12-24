@@ -93,7 +93,10 @@
                             //make the new average and post it to the database
                             //add code to show that the user submitted. Use localstorage?
                         }
+
                         //getting last average from the database
+
+                        //note this part hasn't been tested yet!!!!!!!!!!!!! to line 130
                         const mysql = require("mysql");
 
                         const connection = require("./config/connection");
@@ -104,6 +107,7 @@
                         var returnedLeastFavRed;
                         var returnedLeastFavGreen;
                         var returnedLeastFavBlue;
+                        var totalPrevEntries;
 
                         function getLastAverage() {
                             const query = "SELECT * FROM `colors` WHERE id=(SELECT MAX(id) FROM `colors`)";
@@ -113,12 +117,13 @@
                                 //declaring the response values?
                                 returnedFavRed = res.fav_red_ave;
                                 returnedFavGreen = res.fav_green_ave;
+                                console.log("testing returning ave green" + returnedFavGreen);
                                 returnedFavBlue = res.fav_blue_ave;
                                 returnedLeastFavRed = res.least_fav_red_ave;
                                 returnedLeastFavGreen = res.least_fav_green_ave;
                                 returnedLeastFavBlue = res.least_fav_blue_ave;
                                 //total number of previous entries to get new average
-                                const totalPrevEntries = res.id;
+                                totalPrevEntries = res.id;
 
 
                             });
