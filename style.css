@@ -2,6 +2,8 @@ body {
     background-color:  rgb(7, 21, 85);
     margin: 0;  
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(156, 143, 194)), to(#66F6F2));
+    /* background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#66F6F5), to(#66F6F2)); */
+    background-color: white;
 }
 
 header { 
@@ -9,6 +11,8 @@ header {
     font-family: 'arial'; 
     background-color: ; 
     color: rgb(19, 20, 104);
+    /* background-color: #7c2a2a; */
+    color: #817575;
     text-align: center;
     margin: 0; 
     padding: 0; 
@@ -18,7 +22,7 @@ button {
     display: block; 
     width: 50%;
     border: none;
-    background-color: #4CAF50;
+    /* background-color: #4CAF50; */
     padding: 14px 28px;
     font-size: 16px;
     cursor: pointer;

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css"> 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Color Project</title>
 <head>
 
@@ -93,5 +94,26 @@ function $(selector) { return document.querySelector(selector); }
 
  
 </script> 
+<script>
+
+
+function changeBackground(){
+
+    const x = Math.floor(Math.random() * 256);
+    const y = Math.floor(Math.random() * 256);
+    const z = Math.floor(Math.random() * 256);
+    const bgColor1 = "rgb(" + x + "," + y + "," + z + ")";
+ console.log(bgColor1);
+    const a = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    const c = Math.floor(Math.random() * 256);
+    const bgColor2 = "rgb(" + a + "," + b + "," + c + ")";
+ console.log(bgColor2);
+
+       document.body.style.background =`linear-gradient(${bgColor1}, ${bgColor2})`;
+    }
+    changeBackground();
+ 
+</script>
 </body> 
 </html>
