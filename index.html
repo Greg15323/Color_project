@@ -32,18 +32,12 @@
 <script>
     let state = 1;
 
- //console.clear();
 function $(selector) { return document.querySelector(selector); }
-    /*
-        Create a new Picker instance and set the parent element.
-        By default, the color picker is a popup which appears when you click the parent.
-    */
+
     var parent = document.querySelector('#parent');
     var picker = new Picker(parent);
  
-    /*
-        You can do what you want with the chosen color using two callbacks: onChange and onDone.
-    */
+
     picker.onChange = function(color) {
         //parent.style.background = color.rgbaString;
         colorCallback(color)
@@ -65,23 +59,35 @@ function $(selector) { return document.querySelector(selector); }
               parentFixed.style.backgroundColor = color.rgbaString;
           },
           onDone: function(color) {
-              //console.log(color);
+
               if (state === 1) {
                               console.log(color._rgba);
-              console.log("fav r=" + color._rgba[0]);
-              console.log("fav g=" + color._rgba[1]);
-              console.log("fav b=" + color._rgba[2]); 
+              const UserFavRed = color._rgba[0];
+              console.log(UserFavRed);
+
+              const UserFavGreen = color._rgba[1];
+              console.log(UserFavGreen);
+
+              const UserFavBlue = color._rgba[2];
+              console.log(UserFavBlue);
               $("#prompt").innerHTML = "Select your least favorite color";
               state ++; 
               console.log(state);
               }
               else {
                 console.log(color._rgba);
-              console.log("least fav r=" + color._rgba[0]);
-              console.log("least fav g=" + color._rgba[1]);
-              console.log("least fav b=" + color._rgba[2]);
+              const UserLeastFavRed = color._rgba[0];
+              console.log(UserLeastFavRed);
+
+              const UserLeastFavGreen = color._rgba[1];
+              console.log(UserLeastFavGreen);
+
+              const UserLeastFavBlue = color._rgba[2];
+              console.log(UserLeastFavBlue);
+
               console.log("doing the redirect");
-              //post colors to storage
+              //get the most recent average for the database
+              //make the new average and post it to the database
               //add code to show that the user submitted. Use localstorage?
               }
 
