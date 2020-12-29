@@ -27,3 +27,7 @@ const submitColor = () => {
 document
     .querySelector(".button")
     .addEventListener("button", submitColor);
+
+
+
+

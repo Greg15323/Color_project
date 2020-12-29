@@ -1,15 +1,12 @@
 body { 
     background-color:  rgb(7, 21, 85);
     margin: 0;  
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(156, 143, 194)), to(#66F6F2));
-    /* background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#66F6F5), to(#66F6F2)); */
     background-color: white;
 }
 
 header { 
     padding: 20px;
-    font-family: 'arial'; 
-    background-color: ; 
+    font-family: 'arial';  
     color: rgb(19, 20, 104);
     /* background-color: #7c2a2a; */
     color: #817575;

@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head> 
+<head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css"> 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Color Project</title>
-<head>
 
 <body>
     <header> 
         <h1>ColorPicker</h1>
     </header>
-
 
     <main> 
         <!--needs link to other page-->
@@ -23,12 +21,8 @@
             <h2 id= "prompt">Select your favorite color</h2>
             <div id="fixed"></div>
         </section>
-    
-
     </main>
 
-
-    
 <script>
     let state = 1;
 
@@ -119,9 +113,9 @@ function changeBackground(){
        document.body.style.background =`linear-gradient(${bgColor1}, ${bgColor2})`;
     }
     changeBackground();
- 
-</script>
+    
 
+</script>
     <footer> 
         <nav>
             <ul>
@@ -138,5 +132,5 @@ function changeBackground(){
             </ul>
         </nav>
     </footer>
-</body> 
+</body>
 </html>
