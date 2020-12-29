@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Color Project</title>
+</head>
+
+<body>
+    <header> 
+        <h1>Results</h1>
+    </header>
+
+    <main> 
+
+
+    </main>
+
+    <script>
+
+    function changeBackground(){
+
+        const x = Math.floor(Math.random() * 256);
+        const y = Math.floor(Math.random() * 256);
+        const z = Math.floor(Math.random() * 256);
+        const bgColor1 = "rgb(" + x + "," + y + "," + z + ")";
+     console.log(bgColor1);
+        const a = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        const c = Math.floor(Math.random() * 256);
+        const bgColor2 = "rgb(" + a + "," + b + "," + c + ")";
+     console.log(bgColor2);
+    
+           document.body.style.background =`linear-gradient(${bgColor1}, ${bgColor2})`;
+        }
+        changeBackground();
+        
+    
+    </script>
+
+
+
+
+    <footer> 
+        <ul> 
+            <nav>
+                <ul>
+                   <a href="https://github.com/timholzer">Tim Holzer</a>
+                   <a href="https://github.com/JuanBoza">Juan Boza</a> 
+                   <a href="https://github.com/Greg15323">Greg Rodriguez</a> 
+                   <a href="https://github.com/hill1635">Tucker Hill</a>
+            </nav>
+        </ul>
+    </nav>
+    </footer>
+</body> 
+</html>
+
+<li><a href="social-share facebook">Share on Facebook
+    <img src="assets\facebook final .png" width="75px" height="75px"></a></li>
+
+    <li><a href="social-share twitter">Share on Twitter
+    <img src="assets\Twitter final .png" width="75px" height="75px"></a></li> 
+    
+    <li><a href="social-share linkedin">Share on LinkedIn
+    <img src="assets\linkedin final .png" width="75px" height="75px"></a></li> 

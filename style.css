@@ -124,8 +124,11 @@ footer  nav {
     font-size: 20px;
 }
 
-footer nav ul {
-    list-style-type: none;
+footer nav ul a {
+  text-align: center; 
+  padding: 10px 60px;
+  word-wrap: normal;
+  display: inline-block 
 }
 
 footer  nav ul li {
