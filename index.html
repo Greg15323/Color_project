@@ -3,31 +3,140 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Color Project</title>
 
-    <head>
+<body>
+    <header> 
+        <h1>ColorPicker</h1>
+    </header>
 
-    <body>
-        <header>
-            <h1>Color picker</h1>
-            <p>Test</p>
-            <p>Test 2</p>
-            <p>test 3</p>
-        </header>
-
-        <main>
-            <!--needs link to other page-->
-            <a href="page.html"><button type="button" class="button button1">Add link to results</button></a>
-
-        </main>
-
-        <!--<div id="parent"></div>-->
+    <main> 
+        <!--needs link to other page-->
+        <script src="https://unpkg.com/vanilla-picker@2"></script>
         <section>
-            <h2 id="prompt">Select your favorite color</h2>
+            <h2 id= "prompt">Select your favorite color</h2>
             <div id="fixed"></div>
         </section>
+
+    </main>
+
+<script>
+    let state = 1;
+
+function $(selector) { return document.querySelector(selector); }
+
+    var parent = document.querySelector('#parent');
+    var picker = new Picker(parent);
+ 
+
+    picker.onChange = function(color) {
+        //parent.style.background = color.rgbaString;
+        colorCallback(color)
+        //pickedcolor = color.rgbaString;
+        console.log(color);
+    };
+    picker.onDone = function(color) {
+        
+    };
+
+    const parentFixed = $('#fixed'),
+      pickerFixed = new Picker({
+          parent: parentFixed,
+          popup: false,
+          alpha: false,
+          editor: false,
+          color: 'black',
+          onChange: function(color) {
+              parentFixed.style.backgroundColor = color.rgbaString;
+          },
+          onDone: function(color) {
+
+              if (state === 1) {
+                              console.log(color._rgba);
+              const UserFavRed = color._rgba[0];
+              console.log(UserFavRed);
+
+              const UserFavGreen = color._rgba[1];
+              console.log(UserFavGreen);
+
+              const UserFavBlue = color._rgba[2];
+              console.log(UserFavBlue);
+              $("#prompt").innerHTML = "Select your least favorite color";
+              state ++; 
+              console.log(state);
+              }
+              else {
+                console.log(color._rgba);
+              const UserLeastFavRed = color._rgba[0];
+              console.log(UserLeastFavRed);
+
+              const UserLeastFavGreen = color._rgba[1];
+              console.log(UserLeastFavGreen);
+
+              const UserLeastFavBlue = color._rgba[2];
+              console.log(UserLeastFavBlue);
+
+              console.log("doing the redirect");
+              //get the most recent average for the database
+              //make the new average and post it to the database
+              //add code to show that the user submitted. Use localstorage?
+              }
+
+
+          }
+        });
+        pickerFixed.setColor('black', true);
+
+
+
+ 
+</script> 
+<script>
+
+
+function changeBackground(){
+
+    const x = Math.floor(Math.random() * 256);
+    const y = Math.floor(Math.random() * 256);
+    const z = Math.floor(Math.random() * 256);
+    const bgColor1 = "rgb(" + x + "," + y + "," + z + ")";
+ console.log(bgColor1);
+    const a = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    const c = Math.floor(Math.random() * 256);
+    const bgColor2 = "rgb(" + a + "," + b + "," + c + ")";
+ console.log(bgColor2);
+
+       document.body.style.background =`linear-gradient(${bgColor1}, ${bgColor2})`;
+    }
+    changeBackground();
+    
+
+</script>
+    <footer> 
+        <nav>
+            <ul>
+               <a href="https://github.com/timholzer">Tim Holzer</a>
+               <a href="https://github.com/JuanBoza">Juan Boza</a> 
+               <a href="https://github.com/Greg15323">Greg Rodriguez</a> 
+               <a href="https://github.com/hill1635">Tucker Hill</a>
+        </nav>
+    </footer>
+</body>
+</html>
+
+<li><a href="social-share facebook">Share on Facebook
+    <img src="assets\facebook final .png" width="75px" height="75px"></a></li>
+
+    <li><a href="social-share twitter">Share on Twitter
+    <img src="assets\Twitter final .png" width="75px" height="75px"></a></li> 
+    
+    <li><a href="social-share linkedin">Share on LinkedIn
+    <img src="assets\linkedin final .png" width="75px" height="75px"></a></li> 
 
         <script src="https://unpkg.com/vanilla-picker@2"></script>
         <script>
@@ -129,3 +238,4 @@
     </body>
 
 </html>
+

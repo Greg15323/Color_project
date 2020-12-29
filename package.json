@@ -28,4 +28,6 @@
     "sequelize": "^6.3.5",
     "vanilla-picker": "^2.11.0"
   }
+
+
 }

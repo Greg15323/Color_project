@@ -1,14 +1,18 @@
 body { 
-    /* background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#66F6F5), to(#66F6F2)); */
+    background-color:  rgb(7, 21, 85);
+    margin: 0;  
     background-color: white;
 }
 
 header { 
     padding: 20px;
-    font-family: 'arial'; 
+    font-family: 'arial';  
+    color: rgb(19, 20, 104);
     /* background-color: #7c2a2a; */
     color: #817575;
     text-align: center;
+    margin: 0; 
+    padding: 0; 
 }
 
 button { 
@@ -22,3 +26,121 @@ button {
     text-align: center;
     margin: auto;
 }
+
+h1 {
+	display: inline;
+	position: relative;
+	font: 200px Helvetica, Sans-Serif;
+	letter-spacing: -5px;
+    color: rgb(245, 233, 227); 
+    font-family: 'Bangers', cursive;
+    text-shadow:
+    -4px -4px 0 #000,
+     0   -4px 0 #000,
+     4px -4px 0 #000,
+     4px  0   0 #000,
+     4px  4px 0 #000,
+     0    4px 0 #000,
+    -4px  4px 0 #000,
+    -4px  0   0 #000;
+}
+
+
+
+main { 
+    font-size: 30px; 
+    text-align: center; 
+    font-family: 'Bangers', cursive;
+    color: rgb(245, 233, 227); 
+    text-shadow:
+    -3px -3px 0 #000,
+     0   -3px 0 #000,
+     3px -3px 0 #000,
+     3px  0   0 #000,
+     3px  3px 0 #000,
+     0    3px 0 #000,
+    -3px  3px 0 #000,
+    -3px  0   0 #000;
+}
+
+
+h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  h2 span {
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+  }
+  
+  code {
+    background-color: #eee;
+    padding: 0 3px 0 3px;
+  }
+  
+  .links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  
+  .links li {
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .links li:hover {
+    text-decoration: underline;
+  }
+  
+  .notes {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+  
+footer {
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ffffff;
+}
+
+footer  h2 {
+    display: inline-block;
+    font-size: 48px;
+}
+
+footer h2 .seo {
+    color: #d9dcd6;
+}
+
+footer  nav {
+    padding-top: 15px;
+    margin-right: 20px;
+    float: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+footer nav ul a {
+  text-align: center; 
+  padding: 10px 60px;
+  word-wrap: normal;
+  display: inline-block 
+}
+
+footer  nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+   
+img { 
+    float: left; 
+    height: 50px; 
+    width: 50px; 
+}
+
+.follow { line-height: 19px; 
+} 
