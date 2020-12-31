@@ -7,11 +7,11 @@ const submitColor = () => {
     const leastFavGreen = "";
     const leastFavBlue = "";
 
-    const response = await fetch("/api", {
-        method: "POST",
-        body: JSON.stringify({ favRed, favGreen, favBlue, leastFavRed, leastFavGreen, leastFavBlue }),
-        headers: { "Content-Type": "application/json" },
-    });
+    // const response = await fetch("/api", {
+    //     method: "POST",
+    //     body: JSON.stringify({ favRed, favGreen, favBlue, leastFavRed, leastFavGreen, leastFavBlue }),
+    //     headers: { "Content-Type": "application/json" },
+    // });
 
     // Not sure if this is how to grab the json data?
     localStorage.setItem("myColors", response.body);
@@ -28,7 +28,7 @@ const submitColor = () => {
 
 //getting last average from the database
 
-//note this part hasn't been tested yet!!!!!!!!!! to line 66.
+//note this part probably is a dead end
 //we need to get the server running to make this work.
 
 
@@ -46,6 +46,7 @@ var totalPrevEntries;
 getLastAverage();
 
 function getLastAverage() {
+    console.log("test");
     const query = "SELECT * FROM `colors` WHERE id=(SELECT MAX(id) FROM `colors`)";
     connection.query(query, function (err, res) {
         if (err) throw err;
@@ -69,8 +70,20 @@ function getLastAverage() {
 
 // Event listener for submit button
 document
-    .querySelector(".button")
+    .querySelector(".picker_done")
     .addEventListener("button", submitColor);
+
+
+    let serverclickstate = 1;
+
+    if (serverclickstate === 1) {
+        console.log("click 1");
+        serverclickstate++;
+    }
+    else {
+        console.log("click 2");
+    }
+
 
 
 
