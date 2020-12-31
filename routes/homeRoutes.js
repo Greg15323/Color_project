@@ -5,7 +5,7 @@ router.get("/", async (req, res) => {
     try {
         // Pick your color page
 
-        //Re-directs to results page if colors already saved in local storage
+        // Re-directs to results page if colors already saved in local storage
         // if (localStorage !== null) {
         //     document.location.replace("/results");
         // } else {

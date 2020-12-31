@@ -6,6 +6,7 @@
     <main> 
         <!--needs link to other page-->
         <script src="https://unpkg.com/vanilla-picker@2"></script>
+        <script type="text/javascript" src="/js/colorPicker.js"></script>
         <section>
             <h2 id= "prompt">Select your favorite color</h2>
             <div id="fixed"></div>
@@ -48,12 +49,19 @@ function $(selector) { return document.querySelector(selector); }
                               console.log(color._rgba);
               const UserFavRed = color._rgba[0];
               console.log(UserFavRed);
+              localStorage.setItem('FavRed', UserFavRed);
+
 
               const UserFavGreen = color._rgba[1];
               console.log(UserFavGreen);
+              localStorage.setItem('FavGreen', UserFavGreen);
+
 
               const UserFavBlue = color._rgba[2];
               console.log(UserFavBlue);
+              localStorage.setItem('FavBlue', UserFavBlue);
+
+
               $("#prompt").innerHTML = "Select your least favorite color";
               state ++; 
               console.log(state);
@@ -62,12 +70,21 @@ function $(selector) { return document.querySelector(selector); }
                 console.log(color._rgba);
               const UserLeastFavRed = color._rgba[0];
               console.log(UserLeastFavRed);
+              localStorage.setItem('LeastFavRed', UserLeastFavRed);
+
 
               const UserLeastFavGreen = color._rgba[1];
               console.log(UserLeastFavGreen);
+              localStorage.setItem('LeastFavGreen', UserLeastFavGreen);
+
 
               const UserLeastFavBlue = color._rgba[2];
               console.log(UserLeastFavBlue);
+              localStorage.setItem('LeastFavBlue', UserLeastFavBlue);
+
+
+              //function call for getLastAverage()
+              getLastAverage();
 
               console.log("doing the redirect");
               //get the most recent average for the database
