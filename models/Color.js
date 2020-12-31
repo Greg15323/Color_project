@@ -34,7 +34,7 @@ Color.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "color"
+        modelName: "colors"
     }
 );
 

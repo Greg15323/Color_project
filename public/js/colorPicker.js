@@ -32,9 +32,9 @@ const submitColor = () => {
 //we need to get the server running to make this work.
 
 
-const mysql = require("mysql");
+// const mysql = require("mysql");
 
-const connection = require("./config/connection");
+// const connection = require("./config/connection");
 
 var returnedFavRed;
 var returnedFavGreen;
@@ -45,27 +45,27 @@ var returnedLeastFavBlue;
 var totalPrevEntries;
 getLastAverage();
 
-function getLastAverage() {
-    console.log("test");
-    const query = "SELECT * FROM `colors` WHERE id=(SELECT MAX(id) FROM `colors`)";
-    connection.query(query, function (err, res) {
-        if (err) throw err;
-        console.log(res);
-        //declaring the response values?
-        returnedFavRed = res.fav_red_ave;
-        returnedFavGreen = res.fav_green_ave;
-        console.log("testing returning ave green" + returnedFavGreen);
-        console.log("test");
-        returnedFavBlue = res.fav_blue_ave;
-        returnedLeastFavRed = res.least_fav_red_ave;
-        returnedLeastFavGreen = res.least_fav_green_ave;
-        returnedLeastFavBlue = res.least_fav_blue_ave;
-        //total number of previous entries to get new average
-        totalPrevEntries = res.id;
+// function getLastAverage() {
+//     console.log("test");
+//     const query = "SELECT * FROM `colors` WHERE id=(SELECT MAX(id) FROM `colors`)";
+//     connection.query(query, function (err, res) {
+//         if (err) throw err;
+//         console.log(res);
+//         //declaring the response values?
+//         returnedFavRed = res.fav_red_ave;
+//         returnedFavGreen = res.fav_green_ave;
+//         console.log("testing returning ave green" + returnedFavGreen);
+//         console.log("test");
+//         returnedFavBlue = res.fav_blue_ave;
+//         returnedLeastFavRed = res.least_fav_red_ave;
+//         returnedLeastFavGreen = res.least_fav_green_ave;
+//         returnedLeastFavBlue = res.least_fav_blue_ave;
+//         //total number of previous entries to get new average
+//         totalPrevEntries = res.id;
 
 
-    });
-}
+//     });
+// }
 
 
 // Event listener for submit button
