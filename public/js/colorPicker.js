@@ -1,25 +1,22 @@
-const submitColor = () => {
-    // Retrieve RGB properties from vanilla-picker response for values
-    const favRed = "";
-    const favGreen = "";
-    const favBlue = "";
-    const leastFavRed = "";
-    const leastFavGreen = "";
-    const leastFavBlue = "";
+function changeBackground() {
 
-    // const response = await fetch("/api", {
-    //     method: "POST",
-    //     body: JSON.stringify({ favRed, favGreen, favBlue, leastFavRed, leastFavGreen, leastFavBlue }),
-    //     headers: { "Content-Type": "application/json" },
-    // });
+    //Need to change xyz & abc values to color aves
+    const x = Math.floor(Math.random() * 256);
+    const y = Math.floor(Math.random() * 256);
+    const z = Math.floor(Math.random() * 256);
+    const bgColor1 = "rgb(" + x + "," + y + "," + z + ")";
+    console.log(bgColor1);
+    const a = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    const c = Math.floor(Math.random() * 256);
+    const bgColor2 = "rgb(" + a + "," + b + "," + c + ")";
+    console.log(bgColor2);
 
-    // Not sure if this is how to grab the json data?
-    localStorage.setItem("myColors", response.body);
-
-
-    //Redirects to results page
-    document.location.replace("/results");
+    document.body.style.background = `linear-gradient(${bgColor1}, ${bgColor2})`;
 }
+changeBackground();
+
+
 
 //Do we want a button to update color choices on results page?
 
@@ -74,15 +71,15 @@ document
     .addEventListener("button", submitColor);
 
 
-    let serverclickstate = 1;
+let serverclickstate = 1;
 
-    if (serverclickstate === 1) {
-        console.log("click 1");
-        serverclickstate++;
-    }
-    else {
-        console.log("click 2");
-    }
+if (serverclickstate === 1) {
+    console.log("click 1");
+    serverclickstate++;
+}
+else {
+    console.log("click 2");
+}
 
 
 

@@ -1,35 +1,58 @@
-<div>
-    {{!-- Displays color results
-    Options for how to view results --}}
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Color Project</title>
+</head>
+
+<body>
+  <header>
+    <h1>Results</h1>
+  </header>
+
+  <main>
+    <button id="clearSubmission" type="submit">Clear Submission</button>
+
+  </main>
 
 
 
 
+  <li><a href="social-share facebook">Share on Facebook
+      <img src="assets\facebook final .png" width="75px" height="75px"></a></li>
 
+  <li><a href="social-share twitter">Share on Twitter
+      <img src="assets\Twitter final .png" width="75px" height="75px"></a></li>
 
+  <li><a href="social-share linkedin">Share on LinkedIn
+      <img src="assets\linkedin final .png" width="75px" height="75px"></a></li>
 
+  <footer>
+    <ul>
+      <nav>
+        <ul>
+          <a href="https://github.com/timholzer">Tim Holzer</a>
+          <a href="https://github.com/JuanBoza">Juan Boza</a>
+          <a href="https://github.com/Greg15323">Greg Rodriguez</a>
+          <a href="https://github.com/hill1635">Tucker Hill</a>
+      </nav>
+    </ul>
+    </nav>
+  </footer>
+  <script src="js/colorPicker.js"></script>
+  <script type="text/javascript">
+    function clearSubmission() {
+      localStorage.clear()
+        document.location.replace("/");
+      }
 
+      $(document).on("click", clearSubmission);
+  </script>
+</body>
 
-    <script>
-
-//will work on this later once we get the averages working
-//function averageBackground(){
-
-  //  const fr = Math.floor(favred);
- //   const fg = Math.floor(favgreen);
- //   const fb = Math.floor(favblue);
- //   const favbgColor = "rgb(" + fr + "," + fg + "," + fb + ")";
-// console.log(favbgColor);
- //   const lfr = Math.floor(leastfavred);
-  //  const lfg = Math.floor(leastfavgreen);
- //   const lfb = Math.floor(leastfavblue);
- //   const leastFavbgColor = "rgb(" + lfr + "," + lfg + "," + lfb + ")";
-// console.log(leastFavbgColor);
-
- //      document.body.style.background =`linear-gradient(${favbgColor}, ${leastFavbgColor})`;
- //   }
- //   averageBackground();
-    
-
-</script>
-</div>
+</html>
