@@ -33,23 +33,6 @@ router.get("/:id", (req, res) => {
         });
 });
 
-// Update your color choices
-router.put("/:id", (req, res) => {
-    Color.update(
-        {
-            where: {
-                id: this.id,
-            },
-        })
-        .then((updatedColors) => {
-            res.status(200).json(updatedColors);
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(400).json(err);
-        });
-});
-
 
 
 
