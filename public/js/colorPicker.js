@@ -42,6 +42,14 @@ function getLocalStorage() {
                 const newLeastBlueAve = (prevLeastFavBlueAve * prevNumberEntries + userLeastFavBlue) / (prevNumberEntries + 1);
 
 
+                if(localStorage.getItem("submitted") == null){
+                document.getElementById("intro").innerHTML = (prevNumberEntries +1) + " people have submitted their favorite and least favorite colors. The color at the top of the page is the average favorite, and the color on the bottom of the page is the average least favorite. Thank you for your submission! Feel free to share this with your friends.";
+                }
+                else{
+                    document.getElementById("intro").innerHTML = prevNumberEntries + " people have submitted their favorite and least favorite colors. The color at the top of the page is the average favorite, and the color on the bottom of the page is the average least favorite. Thank you for your submission! Feel free to share this with your friends.";
+                }
+
+
 
 
                 
@@ -62,17 +70,25 @@ function getLocalStorage() {
 
                        
                     }
+
                     averageBackground();
+
+                    if(localStorage.getItem("submitted") == null){
+                        console.log(localStorage.getItem("submitted"));
 
                 fetch("/api/colorRoutes", {
                     method: "POST",
                     body: JSON.stringify({ fav_red_ave : newFavRedAve, fav_green_ave : newFavGreenAve, fav_blue_ave : newFavBlueAve, least_fav_red_ave : newLeastRedAve, least_fav_green_ave : newLeastGreenAve, least_fav_blue_ave : newLeastBlueAve }),
                     headers: { "Content-Type": "application/json" },
                 });
-            
+
+                localStorage.setItem('submitted', "yeah boi");
+
+            }
         })
 
 }
+
 
 
 

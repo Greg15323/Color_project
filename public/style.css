@@ -1,7 +1,16 @@
-body { 
+/* body { 
     background-color:  rgb(7, 21, 85);
     margin: 0;  
     background-color: white;
+} */
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 header { 
