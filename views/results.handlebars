@@ -1,17 +1,20 @@
-<!DOCTYPE html>
-<html lang="en-us">
+{{!-- {{!-- <!DOCTYPE html>
+<html lang="en-us"> --}}
 
-<head>
+
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"> --}}
+<head>  
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <title>Color Project</title>
 </head>
 
 <body>
   <header>
+    <p id = "intro">qewefw
+</p>
     <h1>Results</h1>
   </header>
 
@@ -32,7 +35,7 @@
   <li><a href="social-share linkedin">Share on LinkedIn
       <img src="assets\linkedin final .png" width="75px" height="75px"></a></li>
 
-  <footer>
+  <footer class="sticky">
     <ul>
       <nav>
         <ul>
@@ -51,7 +54,7 @@
         document.location.replace("/");
       }
 
-      $(document).on("click", clearSubmission);
+      $("#clearSubmission").on("click", clearSubmission);
   </script>
 
 </body>
