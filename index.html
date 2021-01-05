@@ -18,10 +18,20 @@
         <!--needs link to other page-->
         <script src="https://unpkg.com/vanilla-picker@2"></script>
         <section>
-            <h2 id= "prompt">Select your favorite color</h2>
-            <div id="fixed"></div>
+            <h3 id="prompt">Select your favorite color</h3>
+            <div class="container"> 
+                <div id="fixed"></div>
         </section>
 
+        <div class="row">
+            <div class="column">
+              <h3>Column 2</h3>
+              <p>Welcome to this crowd sourced color project.  Our aim is to see what the average is of everyone's favorite and least favorite color. </p>
+            </div>
+          </div>
+
+           
+        </Section> 
     </main>
 
 <script>
@@ -65,7 +75,9 @@ function $(selector) { return document.querySelector(selector); }
 
               const UserFavBlue = color._rgba[2];
               console.log(UserFavBlue);
+        
               $("#prompt").innerHTML = "Select your least favorite color";
+            
               state ++; 
               console.log(state);
               }
@@ -117,18 +129,33 @@ function changeBackground(){
     
 
 </script>
-    <footer> 
+        <footer> 
         <nav>
             <ul>
-               <a href="https://github.com/timholzer">Tim Holzer</a>
-               <a href="https://github.com/JuanBoza">Juan Boza</a> 
-               <a href="https://github.com/Greg15323">Greg Rodriguez</a> 
-               <a href="https://github.com/hill1635">Tucker Hill</a>
+               <li><a href="https://github.com/timholzer">Tim Holzer</a></li>
+               <li><a href="https://github.com/JuanBoza">Juan Boza</a></li>
+               <li><a href="https://github.com/Greg15323">Greg Rodriguez</a></li>
+               <li><a href="https://github.com/hill1635">Tucker Hill</a></li>
+            
+                
+                    <section>
+                    <li><a href="social-share facebook">Share on Facebook
+                    <img src="assets\facebook final .png" width="75px" height="75px"></a></li>
+            
+                    <li><a href="social-share twitter">Share on Twitter
+                    <img src="assets\Twitter final .png" width="75px" height="75px"></a></li> 
+                
+                    <li><a href="social-share linkedin">Share on LinkedIn
+                    <img src="assets\linkedin final .png" width="75px" height="75px"></a></li>
+                    </section> 
+            </ul>
         </nav>
-    </footer>
+        </footer>
 </body>
 </html>
 
+<<<<<<< HEAD
+=======
 <li><a href="social-share facebook">Share on Facebook
     <img src="assets\facebook final .png" width="75px" height="75px"></a></li>
 
@@ -143,4 +170,6 @@ function changeBackground(){
     </body>
 
 </html>
+>>>>>>> origin
 
+        
