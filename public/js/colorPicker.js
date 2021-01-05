@@ -1,20 +1,89 @@
-function changeBackground() {
+function getLocalStorage() {
 
-    //Need to change xyz & abc values to color aves
-    const x = Math.floor(Math.random() * 256);
-    const y = Math.floor(Math.random() * 256);
-    const z = Math.floor(Math.random() * 256);
-    const bgColor1 = "rgb(" + x + "," + y + "," + z + ")";
-    console.log(bgColor1);
-    const a = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    const c = Math.floor(Math.random() * 256);
-    const bgColor2 = "rgb(" + a + "," + b + "," + c + ")";
-    console.log(bgColor2);
+    fetch("api/colorRoutes", {
+        method: "GET",
+        //fav_red_ave, fav_green_ave, fav_blue_ave, least_fav_red_ave, least_fav_green_ave, least_fav_blue_ave
+        headers: { "Content-Type": "application/json" },
+    })
+        .then (res=>res.json())
+        .then(function (coloraves) {
+                console.log(coloraves);
+                console.log("id = " + coloraves.fav_red_ave);
+                const prevNumberEntries = coloraves.id;
+                const prevFavRedAve = coloraves.fav_red_ave;
+                const prevFavGreenAve = coloraves.fav_green_ave;
+                const prevFavBlueAve = coloraves.fav_blue_ave;
+                const prevLeastFavRedAve = coloraves.least_fav_red_ave;
+                const prevLeastFavGreenAve = coloraves.least_fav_green_ave;
+                const prevLeastFavBlueAve = coloraves.least_fav_blue_ave;
+                //these are the previous average values that will get averaged with theuser inputs that are on local storage.
 
-    document.body.style.background = `linear-gradient(${bgColor1}, ${bgColor2})`;
+                // Not sure if lines 35-48 are in right place, but should calculate average.
+                let userFavRed = localStorage.getItem("FavRed");
+                userFavRed = parseInt(userFavRed);
+                let userFavGreen = localStorage.getItem("FavGreen");
+                userFavGreen = parseInt(userFavGreen);
+                let userFavBlue = localStorage.getItem("FavBlue");
+                userFavBlue = parseInt(userFavBlue);
+                let userLeastFavRed = localStorage.getItem("LeastFavRed");
+                userLeastFavRed = parseInt(userLeastFavRed);
+                let userLeastFavGreen = localStorage.getItem("LeastFavGreen");
+                userLeastFavGreen = parseInt(userLeastFavGreen);
+                let userLeastFavBlue = localStorage.getItem("LeastFavBlue");
+                userLeastFavBlue = parseInt(userLeastFavBlue);
+
+                //Calculates red, blue and green averages
+                const newFavRedAve = (prevFavRedAve * prevNumberEntries + userFavRed) / (prevNumberEntries + 1);
+                console.log(newFavRedAve);
+                const newFavGreenAve = (prevFavGreenAve * prevNumberEntries + userFavGreen) / (prevNumberEntries + 1);
+                const newFavBlueAve = (prevFavBlueAve * prevNumberEntries + userFavBlue) / (prevNumberEntries + 1);
+                const newLeastRedAve = (prevLeastFavRedAve * prevNumberEntries + userLeastFavRed) / (prevNumberEntries + 1);
+                const newLeastGreenAve = (prevLeastFavGreenAve * prevNumberEntries + userLeastFavGreen) / (prevNumberEntries + 1);
+                const newLeastBlueAve = (prevLeastFavBlueAve * prevNumberEntries + userLeastFavBlue) / (prevNumberEntries + 1);
+
+
+
+
+                
+
+                function averageBackground(){
+                    const fr = Math.round(newFavRedAve);
+                    const fg = Math.round(newFavGreenAve);
+                    const fb = Math.round(newFavBlueAve);
+                    const favbgColor = "rgb(" + fr + "," + fg + "," + fb + ")";
+                 console.log(favbgColor);
+                    const lfr = Math.round(newLeastRedAve);
+                    const lfg = Math.round(newLeastGreenAve);
+                    const lfb = Math.round(newLeastBlueAve);
+                    const leastFavbgColor = "rgb(" + lfr + "," + lfg + "," + lfb + ")";
+                 console.log(leastFavbgColor);
+                       document.body.style.background =`linear-gradient(${favbgColor}, ${leastFavbgColor})`;
+
+
+                       
+                    }
+                    averageBackground();
+
+                fetch("/api/colorRoutes", {
+                    method: "POST",
+                    body: JSON.stringify({ fav_red_ave : newFavRedAve, fav_green_ave : newFavGreenAve, fav_blue_ave : newFavBlueAve, least_fav_red_ave : newLeastRedAve, least_fav_green_ave : newLeastGreenAve, least_fav_blue_ave : newLeastBlueAve }),
+                    headers: { "Content-Type": "application/json" },
+                });
+            
+        })
+
 }
-changeBackground();
+
+
+
+getLocalStorage();
+
+
+
+
+
+
+
 
 
 
@@ -40,7 +109,9 @@ var returnedLeastFavRed;
 var returnedLeastFavGreen;
 var returnedLeastFavBlue;
 var totalPrevEntries;
-getLastAverage();
+
+
+//getLastAverage();
 
 // function getLastAverage() {
 //     console.log("test");
@@ -66,20 +137,20 @@ getLastAverage();
 
 
 // Event listener for submit button
-document
-    .querySelector(".picker_done")
-    .addEventListener("button", submitColor);
+// document
+//     .querySelector(".picker_done")
+//     .addEventListener("button", submitColor);
 
 
-let serverclickstate = 1;
+// let serverclickstate = 1;
 
-if (serverclickstate === 1) {
-    console.log("click 1");
-    serverclickstate++;
-}
-else {
-    console.log("click 2");
-}
+// if (serverclickstate === 1) {
+//     console.log("click 1");
+//     serverclickstate++;
+// }
+// else {
+//     console.log("click 2");
+// }
 
 
 
