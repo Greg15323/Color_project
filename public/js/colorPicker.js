@@ -2,13 +2,13 @@ function getLocalStorage() {
 
     fetch("api/colorRoutes", {
         method: "GET",
-        //fav_red_ave, fav_green_ave, fav_blue_ave, least_fav_red_ave, least_fav_green_ave, least_fav_blue_ave
+
         headers: { "Content-Type": "application/json" },
     })
         .then (res=>res.json())
         .then(function (coloraves) {
-                console.log(coloraves);
-                console.log("id = " + coloraves.fav_red_ave);
+              
+                //these are the previous average values that will get averaged with theuser inputs that are on local storage.
                 const prevNumberEntries = coloraves.id;
                 const prevFavRedAve = coloraves.fav_red_ave;
                 const prevFavGreenAve = coloraves.fav_green_ave;
@@ -16,9 +16,9 @@ function getLocalStorage() {
                 const prevLeastFavRedAve = coloraves.least_fav_red_ave;
                 const prevLeastFavGreenAve = coloraves.least_fav_green_ave;
                 const prevLeastFavBlueAve = coloraves.least_fav_blue_ave;
-                //these are the previous average values that will get averaged with theuser inputs that are on local storage.
 
-                // Not sure if lines 35-48 are in right place, but should calculate average.
+
+                // getting the color values from what the user picked last time from local storage and turning the string into an int
                 let userFavRed = localStorage.getItem("FavRed");
                 userFavRed = parseInt(userFavRed);
                 let userFavGreen = localStorage.getItem("FavGreen");
@@ -34,14 +34,13 @@ function getLocalStorage() {
 
                 //Calculates red, blue and green averages
                 const newFavRedAve = (prevFavRedAve * prevNumberEntries + userFavRed) / (prevNumberEntries + 1);
-                console.log(newFavRedAve);
                 const newFavGreenAve = (prevFavGreenAve * prevNumberEntries + userFavGreen) / (prevNumberEntries + 1);
                 const newFavBlueAve = (prevFavBlueAve * prevNumberEntries + userFavBlue) / (prevNumberEntries + 1);
                 const newLeastRedAve = (prevLeastFavRedAve * prevNumberEntries + userLeastFavRed) / (prevNumberEntries + 1);
                 const newLeastGreenAve = (prevLeastFavGreenAve * prevNumberEntries + userLeastFavGreen) / (prevNumberEntries + 1);
                 const newLeastBlueAve = (prevLeastFavBlueAve * prevNumberEntries + userLeastFavBlue) / (prevNumberEntries + 1);
 
-
+                //fixes an issue where if they just sumbitted then their number hasn't been counted in the database befure this is generated
                 if(localStorage.getItem("submitted") == null){
                 document.getElementById("intro").innerHTML = (prevNumberEntries +1) + " people have submitted their favorite and least favorite colors.";
                 }
@@ -52,7 +51,7 @@ function getLocalStorage() {
 
 
 
-                
+                //rounds to the nearest number an merges the color values so that the background linear gradient can be generated from the most recent averages
 
                 function averageBackground(){
                     const fr = Math.round(newFavRedAve);
@@ -73,6 +72,8 @@ function getLocalStorage() {
 
                     averageBackground();
 
+                    //checks if the user's choices has been added to the database, if it hasn't then it posts to the sql database and writes a confirmation that they've submitted into local storage.
+                    
                     if(localStorage.getItem("submitted") == null){
                         console.log(localStorage.getItem("submitted"));
 

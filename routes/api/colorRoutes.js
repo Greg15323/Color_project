@@ -17,7 +17,6 @@ router.get("/", async(req, res) => {
         });
 });
 
-// Create favorite/least favorite colors
 router.post("/", (req, res) => {
     console.log("hi" ,req.body);
     Color.create(req.body)
