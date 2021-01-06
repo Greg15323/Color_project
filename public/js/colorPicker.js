@@ -43,10 +43,10 @@ function getLocalStorage() {
 
 
                 if(localStorage.getItem("submitted") == null){
-                document.getElementById("intro").innerHTML = (prevNumberEntries +1) + " people have submitted their favorite and least favorite colors. The color at the top of the page is the average favorite, and the color on the bottom of the page is the average least favorite. Thank you for your submission! Feel free to share this with your friends.";
+                document.getElementById("intro").innerHTML = (prevNumberEntries +1) + " people have submitted their favorite and least favorite colors.";
                 }
                 else{
-                    document.getElementById("intro").innerHTML = prevNumberEntries + " people have submitted their favorite and least favorite colors. The color at the top of the page is the average favorite, and the color on the bottom of the page is the average least favorite. Thank you for your submission! Feel free to share this with your friends.";
+                    document.getElementById("intro").innerHTML = prevNumberEntries + " people have submitted their favorite and least favorite colors.";
                 }
 
 

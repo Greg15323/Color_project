@@ -3,9 +3,9 @@
     margin: 0;  
     background-color: white;
 } */
-html {
+/* html {
   height: 100%;
-}
+} */
 body {
   height: 100%;
   margin: 0;
@@ -142,9 +142,9 @@ table tr {
     cursor: pointer;
   }
   
-  .links li:hover {
+  /* .links li:hover {
     
-  }
+  } */
   
   .notes {
     width: 100%;
