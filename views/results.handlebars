@@ -1,52 +1,62 @@
-{{!-- {{!-- <!DOCTYPE html>
+ {{!-- <!DOCTYPE html>
 <html lang="en-us"> --}}
 
 
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="style.css"> --}}
+
 <head>  
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+  <style>
+  html {
+  height: 100%;
+}
+</style>
 
   <title>Color Project</title>
 </head>
 
 <body>
   <header>
-    <p id = "intro">qewefw
-</p>
-    <h1>Results</h1>
+
   </header>
 
-  <main>
-    <button id="clearSubmission" type="submit">Clear Submission</button>
+  <main>    
+    <p id = "intro">qewefw
+</p>
+<div class="m-2">
+    <h1>Results</h1>
+    <p>The color at the top of the page is the average favorite, and the color on the bottom of the page is the average least favorite. Thank you for your submission! Feel free to share this with your friends.</p>
 
+    {{!-- <button id="clearSubmission" type="submit">Clear Submission</button> --}}
+
+</div>
   </main>
 
 
 
-
-  <li><a href="social-share facebook">Share on Facebook
-      <img src="assets\facebook final .png" width="75px" height="75px"></a></li>
-
-  <li><a href="social-share twitter">Share on Twitter
-      <img src="assets\Twitter final .png" width="75px" height="75px"></a></li>
-
-  <li><a href="social-share linkedin">Share on LinkedIn
-      <img src="assets\linkedin final .png" width="75px" height="75px"></a></li>
-
-  <footer class="sticky">
-    <ul>
-      <nav>
-        <ul>
-          <a href="https://github.com/timholzer">Tim Holzer</a>
-          <a href="https://github.com/JuanBoza">Juan Boza</a>
-          <a href="https://github.com/Greg15323">Greg Rodriguez</a>
-          <a href="https://github.com/hill1635">Tucker Hill</a>
-      </nav>
-    </ul>
-    </nav>
-  </footer>
+<footer> 
+            <nav>
+                <ul>
+                    <li><a href="https://github.com/timholzer">Tim Holzer</a></li>
+                    <li><a href="https://github.com/JuanBoza">Juan Boza</a></li>
+                    <li><a href="https://github.com/Greg15323">Greg Rodriguez</a></li>
+                    <li><a href="https://github.com/hill1635">Tucker Hill</a></li>
+        
+            
+                        <section>
+                        <li><a href="social-share facebook">Share on Facebook
+                        <img src="assets\facebook final .png" width="75px" height="75px"></a></li>
+        
+                        <li><a href="social-share twitter">Share on Twitter
+                        <img src="assets\Twitter final .png" width="75px" height="75px"></a></li> 
+            
+                        <li><a href="social-share linkedin">Share on LinkedIn
+                        <img src="assets\linkedin final .png" width="75px" height="75px"></a></li>
+                        </section> 
+                </ul>
+            </nav>
+        </footer>
   <script src="js/colorPicker.js"></script>
   <script type="text/javascript">
     function clearSubmission() {
@@ -57,26 +67,3 @@
       $("#clearSubmission").on("click", clearSubmission);
   </script>
 
-</body>
-
-</html>
-</script>
-</body>
-
-</html>
-</script>
-</body>
-
-</html>
-</script>
-</body>
-
-</html>
-</script>
-</body>
-
-</html>
-</script>
-</body>
-
-</html>
