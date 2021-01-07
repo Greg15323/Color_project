@@ -4,12 +4,12 @@
     </header>
 
     <main> 
-        <!--needs link to other page-->
+
         <script src="https://unpkg.com/vanilla-picker@2"></script>
         {{!-- <script type="text/javascript" src="/js/colorPicker.js"></script> --}}
-        <div class="row m-2">
+        <div class="row m-4">
 
-              <p>Welcome to this crowd sourced color project.  Our aim is to see what the average is of everyone's favorite and least favorite color. </p>
+              <p>Welcome to this crowd sourced color project. We aim to find the average of everyone's favorite and least favorite color. </p>
 
           </div>        
         <section>
@@ -23,12 +23,12 @@
     </main>
 
 <script>
-
+//redirects the user to the results page if they've submitted before
     if(localStorage.getItem("submitted") != null){
          document.location.replace("/results");
     }
     let state = 1;
-
+//bunch of code that generates the color picker element
 function $(selector) { return document.querySelector(selector); }
 
     var parent = document.querySelector('#parent');
@@ -36,10 +36,9 @@ function $(selector) { return document.querySelector(selector); }
  
 
     picker.onChange = function(color) {
-        //parent.style.background = color.rgbaString;
+
         colorCallback(color)
-        //pickedcolor = color.rgbaString;
-        console.log(color);
+
     };
     picker.onDone = function(color) {
         
@@ -56,7 +55,8 @@ function $(selector) { return document.querySelector(selector); }
               parentFixed.style.backgroundColor = color.rgbaString;
           },
           onDone: function(color) {
-
+            //uses a state counter system to let the user pick twice, first for their favorite color and second for their least favorite
+            //the rgb gets stored in local storage
               if (state === 1) {
                               console.log(color._rgba);
               const UserFavRed = color._rgba[0];
@@ -95,14 +95,11 @@ function $(selector) { return document.querySelector(selector); }
               localStorage.setItem('LeastFavBlue', UserLeastFavBlue);
 
 
-              //function call for getLastAverage()
-              //getLastAverage();
+
 
               console.log("doing the redirect");
               document.location.replace("/results");
-              //get the most recent average for the database
-              //make the new average and post it to the database
-              //add code to show that the user submitted. Use localstorage?
+
               }
 
 
@@ -116,7 +113,7 @@ function $(selector) { return document.querySelector(selector); }
 </script> 
 <script>
 
-
+//generates a random background color with a gradient
 function changeBackground(){
 
     const x = Math.floor(Math.random() * 256);
